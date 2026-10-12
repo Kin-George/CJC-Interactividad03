@@ -17,7 +17,7 @@
     --ink:#10202a; --ink-2:#44545e; --muted:#65737c;
     --line:#d3dbdf; --line-soft:#e4eaec; --grid:#e1e8ea; --axis:#bcc8ce;
     --alto:#eb6834; --bajo:#2a78d6; --incierto:#1baf7a;
-    --edu-1:#dbe3e6; --edu-2:#b9c6cc; --edu-3:#93a4ac; --edu-4:#677c88; --edu-5:#3f525e;
+    --edu-1:#e6d5a8; --edu-2:#d98fae; --edu-3:#9a68c2; --edu-4:#5c4aa8; --edu-5:#2d2a63;
     --shadow:0 1px 2px rgba(16,32,42,.06),0 14px 32px -18px rgba(16,32,42,.28);
     --font-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
     --font-body:"Public Sans","Segoe UI",system-ui,sans-serif;
@@ -30,7 +30,7 @@
       --ink:#eaf0f2; --ink-2:#b4c0c7; --muted:#8895a0;
       --line:#2c353c; --line-soft:#232b31; --grid:#232b31; --axis:#3a454d;
       --alto:#d95926; --bajo:#3987e5; --incierto:#199e70;
-      --edu-1:#2a343b; --edu-2:#3b4953; --edu-3:#566875; --edu-4:#7f929d; --edu-5:#b2c0c7;
+      --edu-1:#efe3c0; --edu-2:#e5a3bd; --edu-3:#b98ad6; --edu-4:#7f6dd6; --edu-5:#4f46a3;
       --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 32px -18px rgba(0,0,0,.7);
     }
   }
@@ -40,7 +40,7 @@
     --ink:#eaf0f2; --ink-2:#b4c0c7; --muted:#8895a0;
     --line:#2c353c; --line-soft:#232b31; --grid:#232b31; --axis:#3a454d;
     --alto:#d95926; --bajo:#3987e5; --incierto:#199e70;
-    --edu-1:#2a343b; --edu-2:#3b4953; --edu-3:#566875; --edu-4:#7f929d; --edu-5:#b2c0c7;
+    --edu-1:#efe3c0; --edu-2:#e5a3bd; --edu-3:#b98ad6; --edu-4:#7f6dd6; --edu-5:#4f46a3;
     --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 32px -18px rgba(0,0,0,.7);
   }
 
@@ -53,12 +53,12 @@
   button,select,input{font:inherit;color:inherit;}
   :focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px;}
   .wrap{max-width:1040px;margin-inline:auto;padding-inline:max(16px,4vw);}
-  section{padding-block:clamp(44px,7vw,88px);}
+  section{padding-block:clamp(26px,4vw,48px);}
   .eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);}
-  h2{font-size:clamp(1.7rem,3.6vw,2.35rem);line-height:1.1;font-weight:700;letter-spacing:-.015em;margin-top:8px;}
-  .lead{margin-top:12px;max-width:60ch;color:var(--ink-2);}
-  .sec-head{margin-bottom:28px;}
-  .sec-head .lead{margin-top:10px;}
+  h2{font-size:clamp(1.45rem,2.8vw,1.95rem);line-height:1.12;font-weight:700;letter-spacing:-.015em;margin-top:6px;}
+  .lead{margin-top:8px;max-width:64ch;color:var(--ink-2);font-size:15.5px;}
+  .sec-head{margin-bottom:16px;}
+  .sec-head .lead{margin-top:6px;}
   .num{font-variant-numeric:tabular-nums;}
 
   /* ---------- barra superior ---------- */
@@ -76,26 +76,27 @@
   @media (max-width:760px){.brand span{display:none;}}
 
   /* ---------- portada ---------- */
-  .hero{padding-block:clamp(40px,7vw,88px) clamp(36px,6vw,72px);}
-  .hero h1{font-size:clamp(2.35rem,6.4vw,4.4rem);line-height:1.02;font-weight:800;letter-spacing:-.025em;max-width:16ch;margin-top:14px;}
-  .hero .sub{margin-top:20px;max-width:58ch;font-size:clamp(1.05rem,2vw,1.25rem);color:var(--ink-2);}
+  .hero{padding-block:clamp(22px,4vw,44px) clamp(18px,3vw,32px);}
+  .hero h1{font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.05;font-weight:800;letter-spacing:-.025em;max-width:24ch;margin-top:10px;}
+  .hero .sub{margin-top:12px;max-width:68ch;font-size:clamp(1rem,1.6vw,1.1rem);color:var(--ink-2);}
   .hero .sub b{color:var(--ink);font-weight:600;}
-  .split{margin-top:clamp(30px,5vw,52px);}
-  .split .bar{display:flex;gap:2px;height:44px;border-radius:8px;overflow:hidden;}
+  .split{margin-top:clamp(16px,2.6vw,26px);}
+  .split .bar{display:flex;gap:2px;height:30px;border-radius:8px;overflow:hidden;}
   .split .bar i{display:block;min-width:2px;}
-  .split .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,36px);margin-top:20px;}
-  .split .col .k{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink-2);}
+  .split .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2.4vw,28px);margin-top:14px;}
+  .split .col .k{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3;}
+  .split .col .k .dot{margin-top:5px;}
   .dot{width:10px;height:10px;border-radius:50%;flex:none;}
-  .split .col .big{font-family:var(--font-display);font-size:clamp(2.3rem,5.2vw,3.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-top:6px;}
+  .split .col .big{font-family:var(--font-display);font-size:clamp(1.8rem,3.8vw,2.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-top:4px;}
   .split .col .ppl{font-size:14px;color:var(--muted);}
-  .split .col .def{margin-top:8px;font-size:14.5px;color:var(--ink-2);max-width:30ch;}
+  .split .col .def{margin-top:4px;font-size:13.5px;color:var(--ink-2);max-width:32ch;}
   .hero .note{margin-top:28px;font-size:14px;color:var(--muted);}
   @media (max-width:720px){.split .cols{grid-template-columns:1fr;gap:22px;}.split .col .def{max-width:none;}}
   .bg-alto{background:var(--alto);} .bg-bajo{background:var(--bajo);} .bg-incierto{background:var(--incierto);}
 
   /* ---------- buscador y ficha ---------- */
   .picker{display:block;position:relative;max-width:640px;}
-  .picker input{width:100%;background:var(--surface);border:1px solid var(--axis);border-radius:var(--radius);padding:14px 52px 14px 16px;font-size:17px;font-weight:500;text-overflow:ellipsis;}
+  .picker input{width:100%;background:var(--surface);border:1px solid var(--axis);border-radius:var(--radius);padding:11px 52px 11px 16px;font-size:16.5px;font-weight:500;text-overflow:ellipsis;}
   .picker input::placeholder{color:var(--muted);font-weight:400;}
   .picker input:hover{border-color:var(--ink-2);}
   .combo-btn{position:absolute;right:4px;top:4px;bottom:4px;width:42px;border:0;border-radius:8px;background:transparent;cursor:pointer;}
@@ -111,56 +112,60 @@
   .combo-list li .nm{flex:1;min-width:0;}
   .combo-list li.none,.combo-list li.more{cursor:default;color:var(--muted);font-size:14px;}
   .combo-list mark{background:transparent;color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--axis);}
-  .picker-lab{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;}
-  .card{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:clamp(20px,3.5vw,34px);}
-  .pill{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:700;letter-spacing:.01em;border:1.5px solid var(--line);border-radius:999px;padding:6px 16px 6px 12px;background:var(--surface);}
-  .pill .dot{width:12px;height:12px;}
-  .pill.alto{border-color:var(--alto);background:color-mix(in srgb,var(--alto) 11%,var(--surface));}
-  .pill.bajo{border-color:var(--bajo);background:color-mix(in srgb,var(--bajo) 11%,var(--surface));}
-  .pill.incierto{border-color:var(--incierto);background:color-mix(in srgb,var(--incierto) 11%,var(--surface));}
-  .card h3{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:700;line-height:1.15;margin-top:14px;letter-spacing:-.01em;}
-  .verdict{margin-top:10px;max-width:60ch;color:var(--ink-2);font-size:17px;}
-  .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:26px 0 0;padding:20px 0 0;border-top:1px solid var(--line-soft);}
-  .stats dt{font-size:13px;font-weight:600;color:var(--muted);}
-  .stats dd{margin:4px 0 0;font-family:var(--font-display);font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:700;letter-spacing:-.015em;line-height:1.1;}
-  .stats small{display:block;margin-top:2px;font-size:13px;color:var(--muted);}
-  .pct{margin-top:14px;}
-  .pct .pct-t{font-size:14.5px;color:var(--ink-2);}
-  .pct .pct-t b{color:var(--ink);font-weight:700;}
-  .pct .track{position:relative;height:6px;border-radius:3px;background:var(--line);margin:12px 6px 6px;}
-  .pct .track i{position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--ink);border:2.5px solid var(--surface);box-shadow:0 0 0 1px var(--ink);}
-  .pct .ends{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);}
-  .pct .track u{position:absolute;left:50%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--muted);opacity:.7;}
-  .stats dd .of{font-family:var(--font-body);font-size:.45em;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:4px;}
-  .stats .sep{grid-column:1/-1;margin:6px 0 -6px;padding-top:18px;border-top:1px solid var(--line-soft);font-size:13px;color:var(--muted);}
-  @media (max-width:520px){.stats{grid-template-columns:1fr;}}
-  .edu{margin-top:26px;}
-  .edu h4,.af h4{margin:0;font-size:13px;font-weight:600;color:var(--muted);}
-  .edu .lead2{margin-top:4px;font-size:15px;color:var(--ink-2);}
-  .edubar{display:flex;gap:2px;height:14px;border-radius:7px;overflow:hidden;margin-top:12px;}
+  .picker-lab{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px;}
+  .card{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--axis);border-radius:14px;box-shadow:var(--shadow);padding:clamp(14px,2.4vw,22px);}
+  .card[data-k="alto"]{border-top-color:var(--alto);} .card[data-k="bajo"]{border-top-color:var(--bajo);} .card[data-k="incierto"]{border-top-color:var(--incierto);}
+  .pill{display:inline-flex;align-items:center;gap:10px;font-size:clamp(15px,2.4vw,18px);font-weight:800;letter-spacing:.005em;line-height:1.2;border:2px solid var(--line);border-radius:999px;padding:7px 18px 7px 14px;background:var(--surface);}
+  .pill .dot{width:14px;height:14px;}
+  .pill.alto{border-color:var(--alto);background:color-mix(in srgb,var(--alto) 16%,var(--surface));}
+  .pill.bajo{border-color:var(--bajo);background:color-mix(in srgb,var(--bajo) 16%,var(--surface));}
+  .pill.incierto{border-color:var(--incierto);background:color-mix(in srgb,var(--incierto) 16%,var(--surface));}
+  .card h3{font-size:clamp(1.2rem,2.4vw,1.5rem);font-weight:700;line-height:1.2;margin-top:10px;letter-spacing:-.01em;}
+  .verdict{margin-top:3px;max-width:70ch;color:var(--ink-2);font-size:15px;}
+  .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px;}
+  .tiles.t2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .tile{background:var(--bg);border-radius:10px;padding:10px 12px;min-width:0;}
+  .tile .tl{font-size:12px;font-weight:600;color:var(--muted);line-height:1.3;min-height:2.6em;}
+  .tile .tl b{color:var(--ink-2);}
+  .tile .tv{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,1.65rem);font-weight:700;letter-spacing:-.015em;line-height:1.1;margin-top:4px;white-space:nowrap;}
+  .tile .tv .of{font-family:var(--font-body);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:5px;}
+  .track{position:relative;height:5px;border-radius:3px;background:var(--line);margin:11px 6px 9px;}
+  .track i{position:absolute;top:50%;width:13px;height:13px;margin:-6.5px 0 0 -6.5px;border-radius:50%;background:var(--ink);border:2.5px solid var(--surface);box-shadow:0 0 0 1px var(--ink);}
+  .track u{position:absolute;left:50%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--muted);opacity:.7;}
+  .tile .tc{font-size:12.5px;color:var(--ink-2);line-height:1.35;}
+  .tile .tc b{color:var(--ink);}
+  .tiles-note{margin-top:8px;font-size:12.5px;color:var(--muted);}
+  @media (max-width:760px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr));}.tile .tl{min-height:0;}}
+  .edu{margin-top:14px;}
+  .edu h4{margin:0;font-size:12.5px;font-weight:600;color:var(--muted);}
+  .edu h4 b{color:var(--ink);}
+  .edubar{display:flex;gap:2px;height:14px;border-radius:7px;overflow:hidden;margin-top:8px;}
   .edubar i{display:block;}
-  .edulegend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:12.5px;color:var(--ink-2);}
+  .edulegend{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;font-size:12.5px;color:var(--ink-2);}
   .edulegend span{display:inline-flex;align-items:center;gap:6px;}
-  .edulegend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
-  .af{margin-top:28px;padding-top:20px;border-top:1px solid var(--line-soft);}
-  .af p{margin-top:4px;font-size:14.5px;color:var(--ink-2);max-width:56ch;}
-  .af-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 20px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line-soft);cursor:pointer;}
+  .edulegend i{width:10px;height:10px;border-radius:3px;display:inline-block;}
+  details.af{margin-top:12px;padding-top:10px;border-top:1px solid var(--line-soft);}
+  details.af summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--ink-2);}
+  details.af summary:hover{color:var(--ink);}
+  details.af p{margin-top:6px;font-size:13px;color:var(--muted);max-width:60ch;}
+  .af-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 20px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line-soft);cursor:pointer;}
   .af-row:last-child{border-bottom:0;}
   .af-row:hover .af-name{text-decoration:underline;}
-  .af-name{font-weight:600;font-size:15px;}
-  .af-inc{font-size:14px;white-space:nowrap;}
+  .af-name{font-weight:600;font-size:14.5px;}
+  .af-inc{font-size:13.5px;white-space:nowrap;}
   .af-inc small{color:var(--muted);}
-  .af-n{font-size:13px;color:var(--muted);white-space:nowrap;}
+  .af-n{font-size:12.5px;color:var(--muted);white-space:nowrap;}
   @media (max-width:600px){.af-row{grid-template-columns:minmax(0,1fr) auto;}.af-n{display:none;}}
-  details.more{margin-top:22px;font-size:14.5px;color:var(--ink-2);}
+  details.more{margin-top:12px;font-size:14px;color:var(--ink-2);}
   details.more summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--muted);}
   details.more summary:hover{color:var(--ink);}
   details.more p{margin-top:8px;}
+  [hidden]{display:none!important;}
 
   /* ---------- gráficos ---------- */
   .legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:6px;font-size:14px;color:var(--ink-2);}
   .legend span{display:inline-flex;align-items:center;gap:8px;}
-  .chart{margin-top:18px;}
+  .chart{margin-top:10px;}
   #qmap svg,#evo svg{display:block;width:100%;height:auto;overflow:visible;}
   .ax{font-family:var(--font-body);font-size:11.5px;fill:var(--muted);}
   .zone{font-family:var(--font-body);font-size:12px;font-weight:700;fill:var(--ink-2);paint-order:stroke;stroke:var(--bg);stroke-width:3.5px;stroke-linejoin:round;}
@@ -178,11 +183,11 @@
   .link{background:none;border:0;padding:0;color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
 
   /* comparación por categoría */
-  .insight{margin:0 0 26px;max-width:62ch;font-size:clamp(1.1rem,2vw,1.3rem);line-height:1.45;color:var(--ink);font-weight:500;}
+  .insight{margin:0 0 14px;max-width:70ch;font-size:clamp(1rem,1.7vw,1.15rem);line-height:1.45;color:var(--ink);font-weight:500;}
   .insight b{font-weight:700;}
   .scroll-x{overflow-x:auto;}
   .cmp{display:grid;grid-template-columns:minmax(150px,1.1fr) repeat(3,minmax(150px,1fr));min-width:640px;}
-  .cmp > div{padding:14px 18px 14px 0;border-top:1px solid var(--line-soft);display:flex;flex-direction:column;justify-content:center;gap:6px;}
+  .cmp > div{padding:9px 18px 9px 0;border-top:1px solid var(--line-soft);display:flex;flex-direction:column;justify-content:center;gap:6px;}
   .cmp .h{border-top:0;padding-bottom:16px;}
   .cmp .h .k{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;}
   .cmp .h .p{font-family:var(--font-display);font-size:1.6rem;font-weight:700;letter-spacing:-.015em;line-height:1.1;}
@@ -200,23 +205,23 @@
   .mini{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden;max-width:180px;}
   .mini i{display:block;height:100%;border-radius:3px;}
 
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
-  .chip{border:1px solid var(--axis);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:600;cursor:pointer;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+  .chip{border:1px solid var(--axis);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;cursor:pointer;}
   .chip:hover{border-color:var(--ink-2);}
   .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg);}
 
   /* barras por grupo */
-  .gbars{margin-top:18px;display:grid;gap:10px;}
+  .gbars{margin-top:12px;display:grid;gap:6px;}
   .grow{display:grid;grid-template-columns:minmax(110px,230px) minmax(0,1fr) 54px;align-items:center;gap:14px;padding:3px 0;cursor:default;}
   .grow .gl{font-size:14px;color:var(--ink-2);line-height:1.25;}
-  .grow .gb{display:flex;gap:2px;height:20px;border-radius:5px;overflow:hidden;}
+  .grow .gb{display:flex;gap:2px;height:16px;border-radius:5px;overflow:hidden;}
   .grow .gb i{display:block;}
   .grow .gv{font-size:14px;font-weight:700;text-align:right;}
   .grow:hover .gl{color:var(--ink);}
   .gcol{display:grid;grid-template-columns:minmax(110px,230px) minmax(0,1fr) 54px;gap:14px;font-size:12px;color:var(--muted);font-weight:600;}
   .gcol span:last-child{text-align:right;}
   @media (max-width:600px){.grow,.gcol{grid-template-columns:minmax(80px,120px) minmax(0,1fr) 46px;gap:10px;}}
-  .cap{margin-top:14px;font-size:14px;color:var(--muted);max-width:68ch;}
+  .cap{margin-top:10px;font-size:13.5px;color:var(--muted);max-width:68ch;}
   .cap b{color:var(--ink-2);}
   table.t{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px;min-width:420px;}
   table.t th,table.t td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line-soft);text-align:left;font-variant-numeric:tabular-nums;}
@@ -237,7 +242,7 @@
   .rhead,.rrow{display:grid;grid-template-columns:30px minmax(150px,1fr) minmax(90px,220px) 64px 84px;gap:14px;align-items:center;}
   .rhead{padding:0 6px 8px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line);}
   .rhead span:nth-child(n+4),.rrow .rv,.rrow .rn{text-align:right;}
-  .rrow{padding:9px 6px;border-bottom:1px solid var(--line-soft);cursor:pointer;}
+  .rrow{padding:6px 6px;border-bottom:1px solid var(--line-soft);cursor:pointer;}
   .rrow:hover{background:var(--surface-2);}
   .ri{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;}
   .rl{font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
@@ -247,7 +252,7 @@
   .rv,.rn{font-size:13.5px;font-variant-numeric:tabular-nums;white-space:nowrap;}
   .rn{color:var(--muted);}
   @media (max-width:640px){.rhead,.rrow{grid-template-columns:22px minmax(0,1fr) 56px;gap:10px;}.rhead span:nth-child(3),.rhead span:nth-child(5),.rt,.rn{display:none;}.rl{white-space:normal;line-height:1.3;}.rdot{display:inline-block;}}
-  .more-wrap{text-align:center;margin-top:22px;}
+  .more-wrap{text-align:center;margin-top:14px;}
 
   /* tooltip */
   .tip{position:fixed;z-index:50;pointer-events:none;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:10px 12px;font-size:13px;max-width:280px;opacity:0;transition:opacity .1s;}
@@ -257,14 +262,14 @@
   .tip .tr b{color:var(--ink);font-variant-numeric:tabular-nums;}
   .tip .tr i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;}
 
-  footer{border-top:1px solid var(--line);padding-block:44px 56px;font-size:14px;color:var(--ink-2);}
+  footer{border-top:1px solid var(--line);padding-block:26px 32px;font-size:14px;color:var(--ink-2);}
   footer .grid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;}
   @media (max-width:760px){footer .grid{grid-template-columns:1fr;}}
   footer h4{margin:0 0 8px;font-size:13px;font-weight:700;color:var(--ink);}
   footer p{margin-top:8px;max-width:64ch;}
   footer details summary{cursor:pointer;font-weight:600;color:var(--ink);}
   footer .cite{font-size:12.5px;color:var(--muted);}
-  footer .end{margin-top:30px;padding-top:16px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:6px 24px;font-size:13px;color:var(--muted);}
+  footer .end{margin-top:18px;padding-top:12px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:6px 24px;font-size:13px;color:var(--muted);}
 </style>
 </head>
 <body>
@@ -275,9 +280,7 @@
     <nav class="links" aria-label="Secciones">
       <a href="#buscador">Tu ocupación</a>
       <a href="#mapa">Mapa</a>
-      <a href="#perfil">Quiénes</a>
-      <a href="#evolucion">Evolución</a>
-      <a href="#grupos">Por grupo</a>
+      <a href="#explora">Explora</a>
       <a href="#ranking">Ranking</a>
     </nav>
     <button class="theme-btn" id="theme-btn" type="button" aria-label="Cambiar entre tema claro y oscuro">
@@ -291,17 +294,16 @@
   <div class="wrap">
     <div class="eyebrow">Inteligencia artificial y empleo en Colombia · GEIH 2025</div>
     <h1>Potencialidad de automatización en el mercado laboral colombiano</h1>
-    <p class="sub">Un indicador que dice si una ocupación tiene un potencial de automatización <b>alto</b>, <b>bajo</b> o <b>incierto</b> frente a la inteligencia artificial.</p>
+    <p class="sub">Un indicador que dice si una ocupación tiene un potencial de automatización relativa <b>alto</b>, <b>bajo</b> o <b>incierto</b> frente a la inteligencia artificial. Mide qué tan parecido es un trabajo a lo que la IA ya hace hoy; no predice pérdida de empleos.</p>
 
     <div class="split" aria-label="Distribución del empleo colombiano según el potencial de automatización">
       <div class="bar" id="hero-bar" role="img"></div>
       <div class="cols">
-        <div class="col"><div class="k"><span class="dot bg-alto"></span>Potencial alto</div><div class="big num" data-share="alto"></div><div class="ppl" data-people="alto"></div><p class="def">Se parece más que la mayoría a lo que hoy hace la IA.</p></div>
-        <div class="col"><div class="k"><span class="dot bg-bajo"></span>Potencial bajo</div><div class="big num" data-share="bajo"></div><div class="ppl" data-people="bajo"></div><p class="def">Se parece menos que la mayoría a lo que hoy hace la IA.</p></div>
-        <div class="col"><div class="k"><span class="dot bg-incierto"></span>Potencial incierto</div><div class="big num" data-share="incierto"></div><div class="ppl" data-people="incierto"></div><p class="def">Los datos no permiten decir si es alto o bajo.</p></div>
+        <div class="col"><div class="k"><span class="dot bg-alto"></span>Potencial alto de automatización relativa</div><div class="big num" data-share="alto"></div><div class="ppl" data-people="alto"></div><p class="def">Más parecido que la mayoría a lo que hoy hace la IA.</p></div>
+        <div class="col"><div class="k"><span class="dot bg-bajo"></span>Potencial bajo de automatización relativa</div><div class="big num" data-share="bajo"></div><div class="ppl" data-people="bajo"></div><p class="def">Menos parecido que la mayoría a lo que hoy hace la IA.</p></div>
+        <div class="col"><div class="k"><span class="dot bg-incierto"></span>Potencial incierto de automatización relativa</div><div class="big num" data-share="incierto"></div><div class="ppl" data-people="incierto"></div><p class="def">Las señales apuntan en direcciones distintas.</p></div>
       </div>
     </div>
-    <p class="note">Mide qué tan parecido es un trabajo a lo que la IA ya hace hoy. No predice pérdida de empleos.</p>
   </div>
 </div>
 
@@ -309,7 +311,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">Tu ocupación</div>
-      <h2>¿Qué potencial tiene tu ocupación?</h2>
+      <h2>¿Qué potencial de automatización tiene tu ocupación?</h2>
     </div>
     <label class="picker-lab" for="occ-input">Escribe para buscar tu ocupación o elígela de la lista</label>
     <div class="picker" id="combo">
@@ -326,70 +328,64 @@
     <div class="sec-head">
       <div class="eyebrow">El mapa</div>
       <h2>Todas las ocupaciones en un mapa</h2>
-      <p class="lead">Cada punto es una ocupación; entre más grande, más gente la ejerce. Los ejes van de 0 a 100 y muestran la posición de cada ocupación frente a las demás; 50 es la mitad. Arriba a la derecha el potencial es alto, abajo a la izquierda es bajo, y en las otras dos zonas es incierto. Los porcentajes son la parte del empleo del país que cae en cada zona.</p>
+      <p class="lead">Cada punto es una ocupación (más grande = más personas). Los ejes van de 0 a 100 y el corte está en 50. Los porcentajes son la parte del empleo del país que cae en cada zona.</p>
     </div>
     <div class="legend" aria-label="Leyenda">
-      <span><i class="dot bg-alto"></i>Potencial alto</span><span><i class="dot bg-bajo"></i>Potencial bajo</span><span><i class="dot bg-incierto"></i>Potencial incierto</span>
+      <span><i class="dot bg-alto"></i>Potencial alto de automatización relativa</span><span><i class="dot bg-bajo"></i>Potencial bajo de automatización relativa</span><span><i class="dot bg-incierto"></i>Potencial incierto de automatización relativa</span>
     </div>
     <div class="chart" id="qmap"></div>
     <div class="pin-info" id="pin-info"></div>
   </div>
 </section>
 
-<section id="perfil">
+<section id="explora">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Quiénes son</div>
-      <h2>¿Quiénes tienen cada potencial?</h2>
+      <div class="eyebrow">Explora los datos</div>
+      <h2>Quiénes son, cómo cambian y dónde están</h2>
     </div>
-    <p class="insight" id="perfil-insight"></p>
-    <div class="scroll-x"><div class="cmp" id="perfil-grid"></div></div>
-  </div>
-</section>
+    <div class="chips" id="tab-chips" role="group" aria-label="Elige qué ver">
+      <button class="chip" type="button" data-tab="perfil" aria-pressed="true">¿Quiénes tienen cada potencial?</button>
+      <button class="chip" type="button" data-tab="evo" aria-pressed="false">¿Ya se nota? 2021–2025</button>
+      <button class="chip" type="button" data-tab="grupo" aria-pressed="false">Por grupo de población</button>
+    </div>
 
-<section id="evolucion">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">2021 – 2025</div>
-      <h2>¿Ya se nota?</h2>
-      <p class="lead">Cómo han cambiado el empleo y el ingreso en cada grupo de ocupaciones. Todo parte de 100 en 2021.</p>
+    <div id="tab-perfil">
+      <p class="insight" id="perfil-insight"></p>
+      <div class="scroll-x"><div class="cmp" id="perfil-grid"></div></div>
     </div>
-    <div class="chips" id="evo-chips" role="group" aria-label="Medida">
-      <button class="chip" type="button" data-metric="empleo" aria-pressed="true">Empleo</button>
-      <button class="chip" type="button" data-metric="ingreso" aria-pressed="false">Ingreso real</button>
-    </div>
-    <p class="insight" id="evo-insight"></p>
-    <div class="legend" id="evo-legend"></div>
-    <div class="chart" id="evo"></div>
-    <p class="cap">Ingreso en pesos de 2025. El potencial no cambia con los años: esto compara qué pasó en cada grupo de ocupaciones y no prueba que sea efecto de la IA.</p>
-    <details class="more"><summary>Ver datos en tabla</summary><div class="scroll-x" id="evo-table"></div></details>
-  </div>
-</section>
 
-<section id="grupos">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Por grupo</div>
-      <h2>¿Quiénes tienen ocupaciones de potencial alto?</h2>
-      <p class="lead">Elige cómo quieres dividir al país.</p>
+    <div id="tab-evo" hidden>
+      <div class="chips" id="evo-chips" role="group" aria-label="Medida">
+        <button class="chip" type="button" data-metric="empleo" aria-pressed="true">Empleo</button>
+        <button class="chip" type="button" data-metric="ingreso" aria-pressed="false">Ingreso real</button>
+      </div>
+      <p class="insight" id="evo-insight"></p>
+      <div class="legend" id="evo-legend"></div>
+      <div class="chart" id="evo"></div>
+      <p class="cap">Todo parte de 100 en 2021; ingreso en pesos de 2025. El potencial no cambia con los años: esto compara qué pasó en cada grupo de ocupaciones y no prueba que sea efecto de la IA.</p>
+      <details class="more"><summary>Ver datos en tabla</summary><div class="scroll-x" id="evo-table"></div></details>
     </div>
-    <div class="chips" id="dim-chips" role="group" aria-label="Dividir por"></div>
-    <p class="insight" id="g-insight"></p>
-    <div class="legend">
-      <span><i class="dot bg-alto"></i>Potencial alto</span><span><i class="dot bg-bajo"></i>Potencial bajo</span><span><i class="dot bg-incierto"></i>Potencial incierto</span>
+
+    <div id="tab-grupo" hidden>
+      <div class="chips" id="dim-chips" role="group" aria-label="Dividir por"></div>
+      <p class="insight" id="g-insight"></p>
+      <div class="legend">
+        <span><i class="dot bg-alto"></i>Potencial alto de automatización relativa</span><span><i class="dot bg-bajo"></i>Potencial bajo de automatización relativa</span><span><i class="dot bg-incierto"></i>Potencial incierto de automatización relativa</span>
+      </div>
+      <div class="gbars" id="gbars"></div>
+      <p class="cap" id="g-cap"></p>
+      <details class="more"><summary>Ver datos en tabla</summary><div class="scroll-x" id="g-table"></div></details>
     </div>
-    <div class="gbars" id="gbars"></div>
-    <p class="cap" id="g-cap"></p>
-    <details class="more"><summary>Ver datos en tabla</summary><div class="scroll-x" id="g-table"></div></details>
   </div>
 </section>
 
 <section id="ranking">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Todas las ocupaciones</div>
-      <h2>Ranking de ocupaciones</h2>
-      <p class="lead">De la que más gente emplea a la que menos. El color indica el potencial.</p>
+      <div class="eyebrow">Ranking</div>
+      <h2>Todas las ocupaciones</h2>
+      <p class="lead">De la que más gente emplea a la que menos. El color indica el potencial de automatización relativa.</p>
     </div>
     <div class="toolbar">
       <div class="chips" id="rank-chips" role="group" aria-label="Filtrar por potencial"></div>
@@ -410,7 +406,7 @@
         <details>
           <summary>Ver la metodología</summary>
           <p>Combinamos dos índices internacionales con los ocupados de la Gran Encuesta Integrada de Hogares (GEIH) 2025 del DANE, usando la clasificación CIUO-08 a 4 dígitos. El <b>parecido de las tareas</b> es el índice OIT-NASK (Gmyrek et&nbsp;al., 2025); el <b>parecido de las habilidades</b> es el índice AIOE (Felten, Raj y Seamans, 2021).</p>
-          <p>Cada índice se expresa en una escala de 0 a 100: la posición (percentil) de la ocupación entre las 418 ocupaciones con puntaje en ambos, donde cada ocupación pesa lo mismo. El corte es el 50, que equivale a la mediana (<span data-med="oit"></span> en el índice de tareas y <span data-med="aioe"></span> en el de habilidades). El potencial es alto si los dos índices ubican la ocupación en 50 o por encima, bajo si los dos la ubican por debajo, e incierto si solo uno la ubica arriba. Las ocupaciones que empatan con la mediana cuentan como altas. "Alto" es una posición relativa: significa más parecido a la IA que la ocupación típica. Las participaciones del empleo usan los factores de expansión de la GEIH. Los cruces por año usan la GEIH 2021–2025 con ingresos en pesos de 2025.</p>
+          <p>Cada índice se expresa en una escala de 0 a 100: la posición (percentil) de la ocupación entre las 418 ocupaciones con puntaje en ambos, donde cada ocupación pesa lo mismo. El corte es el 50, que equivale a la mediana (<span data-med="oit"></span> en el índice de tareas y <span data-med="aioe"></span> en el de habilidades). El potencial de automatización relativa es alto si los dos índices ubican la ocupación en 50 o por encima, bajo si los dos la ubican por debajo, e incierto si solo uno la ubica arriba. Las ocupaciones que empatan con la mediana cuentan como altas. "Alto" es una posición relativa: significa más parecido a la IA que la ocupación típica. Las participaciones del empleo usan los factores de expansión de la GEIH. Los cruces por año usan la GEIH 2021–2025 con ingresos en pesos de 2025.</p>
           <p class="cite">Felten, E., Raj, M., y Seamans, R. (2021). Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses. <i>Strategic Management Journal</i>.<br>Gmyrek, P. et&nbsp;al. (2025). Generative AI and jobs: A global analysis of potential effects on job quantity and quality. OIT y NASK.</p>
         </details>
       </div>
@@ -443,7 +439,8 @@
   var fmtMill = function(n){ return (n/1e6).toLocaleString('es-CO', {minimumFractionDigits:1, maximumFractionDigits:1}); };
   var esc = function(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); };
 
-  var LABEL = {alto:'Potencial alto', bajo:'Potencial bajo', incierto:'Potencial incierto'};
+  var LABEL = {alto:'Potencial alto de automatización relativa', bajo:'Potencial bajo de automatización relativa', incierto:'Potencial incierto de automatización relativa'};
+  var SHORT = {alto:'Alto', bajo:'Bajo', incierto:'Incierto'};
   var CATS = ['alto','bajo','incierto'];
 
   /* ---------- clasificación ----------
@@ -507,7 +504,7 @@
 
   /* ---------- portada ---------- */
   var heroBar = document.getElementById('hero-bar');
-  heroBar.setAttribute('aria-label', 'Potencial alto ' + fmtPct(NAT.alto) + ', bajo ' + fmtPct(NAT.bajo) + ', incierto ' + fmtPct(NAT.incierto));
+  heroBar.setAttribute('aria-label', 'Potencial alto de automatización relativa ' + fmtPct(NAT.alto) + ', bajo ' + fmtPct(NAT.bajo) + ', incierto ' + fmtPct(NAT.incierto));
   heroBar.innerHTML = CATS.map(function(c){ return '<i class="bg-' + c + '" style="width:' + (NAT[c]*100) + '%"></i>'; }).join('');
   document.querySelectorAll('[data-share]').forEach(function(el){
     el.textContent = (NAT[el.dataset.share]*100).toLocaleString('es-CO', {minimumFractionDigits:1, maximumFractionDigits:1}) + ' %';
@@ -619,22 +616,21 @@
     return N;
   }
   var N_INC = pctRank('imed'), N_PER = pctRank('n');
-  function extremo(p, top, bottom, mid){ return p >= 98 ? top + '.' : (p <= 2 ? bottom + '.' : mid); }
-  function pctMarkup(p, text, lo, hi, mid){
-    if(p == null) return '';
-    return '<div class="pct"><p class="pct-t">Percentil <b class="num">' + p + '</b>: ' + text + '</p>' +
-      '<div class="track" role="img" aria-label="Percentil ' + p + ' de 100"' + '>' + (mid ? '<u></u>' : '') + '<i style="left:' + p + '%"></i></div>' +
-      '<div class="ends"><span>' + lo + '</span><span>' + hi + '</span></div></div>';
+  function tile(label, big, of, p, mid, cap){
+    return '<div class="tile"><div class="tl">' + label + '</div><div class="tv num">' + big + (of ? '<span class="of">' + of + '</span>' : '') + '</div>' +
+      (p == null ? '' : '<div class="track" role="img" aria-label="Percentil ' + p + ' de 100">' + (mid ? '<u></u>' : '') + '<i style="left:' + p + '%"></i></div>') +
+      '<div class="tc">' + cap + '</div></div>';
   }
   var EDU_COL = ['--edu-1','--edu-2','--edu-3','--edu-4','--edu-5'];
   var VERDICT = {
-    alto: 'Esta ocupación se parece más que la mayoría a lo que hoy puede hacer la IA.',
-    bajo: 'Esta ocupación se parece menos que la mayoría a lo que hoy puede hacer la IA.',
-    incierto: 'No podemos decir si el potencial es alto o bajo: las señales que usamos apuntan en direcciones distintas. Eso no significa riesgo medio.',
+    alto: 'Se parece más que la mayoría de ocupaciones a lo que hoy puede hacer la IA.',
+    bajo: 'Se parece menos que la mayoría de ocupaciones a lo que hoy puede hacer la IA.',
+    incierto: 'Las señales apuntan en direcciones distintas, así que no podemos decir si es alto o bajo. No significa riesgo medio.',
     sin: 'No pudimos clasificar esta ocupación: le falta información.'
   };
   var pinned = null;
 
+  var EDU_SHORT = ['Ninguno','Primaria','Secundaria','Media','Superior'];
   function eduMarkup(o){
     if(!o.edu) return '';
     var labels = DATA.eduOrder, top = 0;
@@ -643,10 +639,9 @@
       return v > 0 ? '<i style="width:' + Math.max(v*100, 1) + '%;background:var(' + EDU_COL[i] + ')" title="' + labels[i] + ': ' + fmtPct(v) + '"></i>' : '';
     }).join('');
     var leg = o.edu.map(function(v,i){
-      return '<span><i style="background:var(' + EDU_COL[i] + ')"></i>' + labels[i] + ' <b class="num">' + fmtPct(v) + '</b></span>';
+      return '<span><i style="background:var(' + EDU_COL[i] + ')"></i>' + EDU_SHORT[i] + ' <b class="num">' + fmtPct(v) + '</b></span>';
     }).join('');
-    return '<div class="edu"><h4>Nivel educativo de quienes la ejercen</h4>' +
-      '<p class="lead2">' + fmtPct(o.edu[top]) + ' tiene ' + labels[top].toLowerCase() + '.</p>' +
+    return '<div class="edu"><h4>Nivel educativo de quienes la ejercen: <b>' + fmtPct(o.edu[top]) + '</b> tiene ' + labels[top].toLowerCase() + '</h4>' +
       '<div class="edubar" role="img" aria-label="Distribución del nivel educativo">' + segs + '</div><div class="edulegend">' + leg + '</div></div>';
   }
   function afMarkup(o){
@@ -659,28 +654,23 @@
       }
       return '<div class="af-row" tabindex="0" role="button" data-l="' + esc(a.l) + '"><span class="af-name">' + esc(a.l) + '</span><span class="af-inc num">' + fmtM(a.imed) + d + '</span><span class="af-n num">' + fmtN(a.n) + ' personas</span></div>';
     }).join('');
-    return '<div class="af"><h4>Ocupaciones afines con potencial bajo</h4><p>Ocupaciones relacionadas con esta según el Catálogo Único de Ocupaciones, con su ingreso mensual mediano (entre paréntesis, frente al de esta ocupación).</p>' + rows + '</div>';
+    return '<details class="af"><summary>Ocupaciones afines con potencial bajo de automatización relativa (' + o.af.length + ')</summary><p>Relacionadas con esta según el Catálogo Único de Ocupaciones; ingreso mensual mediano y, entre paréntesis, su diferencia con esta ocupación.</p>' + rows + '</details>';
   }
   function renderDetail(o, noScroll){
     var k = o.k || 'sin';
     var pill = k === 'sin' ? '<span class="pill">Sin información suficiente</span>' :
       '<span class="pill ' + k + '"><i class="dot bg-' + k + '"></i>' + LABEL[k] + '</span>';
     var hasIdx = o.o != null && o.a != null;
-    var idxText = function(p){ return p >= 50 ? 'más parecidas a la IA que la mitad de las ocupaciones.' : 'menos parecidas a la IA que la mitad de las ocupaciones.'; };
-    var idx = !hasIdx ? '' :
-      '<div class="sep">Qué tanto se parecen sus tareas y habilidades a lo que hoy puede hacer la IA. El punto medio es 50: por encima, más parecido que la mayoría.</div>' +
-      '<div><dt>Parecido de las tareas con la IA (OIT)</dt><dd class="num">' + pInt(o.po) + '<span class="of">de 100</span></dd>' +
-      pctMarkup(pInt(o.po), 'sus tareas son ' + idxText(pInt(o.po)), 'Menos parecido', 'Más parecido', true) + '</div>' +
-      '<div><dt>Parecido de las habilidades con la IA (Pizzinelli)</dt><dd class="num">' + pInt(o.pa) + '<span class="of">de 100</span></dd>' +
-      pctMarkup(pInt(o.pa), 'sus habilidades son ' + idxText(pInt(o.pa)), 'Menos parecido', 'Más parecido', true) + '</div>';
-    var more = '';
-    detail.innerHTML = pill + '<h3>' + esc(o.l) + '</h3><p class="verdict">' + VERDICT[k] + '</p>' +
-      '<dl class="stats"><div><dt>Personas que la ejercen</dt><dd class="num">' + fmtN(o.n) + '</dd><small>' +
-      (o.n/NAT.ocupados*100).toLocaleString('es-CO', {maximumFractionDigits:2}) + '% de los ocupados del país</small>' +
-      pctMarkup(o.p_n, extremo(o.p_n, 'es de las ocupaciones con más personas', 'es de las ocupaciones con menos personas', 'tiene más personas que el ' + o.p_n + '% de las ' + N_PER + ' ocupaciones.'), 'Pocas personas', 'Muchas personas') + '</div>' +
-      '<div><dt>Ingreso mensual mediano</dt><dd class="num">' + fmtM(o.imed) + '</dd><small>Promedio: ' + fmtM(o.im) + '</small>' +
-      pctMarkup(o.p_imed, extremo(o.p_imed, 'es de las ocupaciones mejor pagadas', 'es de las ocupaciones peor pagadas', 'gana más que el ' + o.p_imed + '% de las ' + N_INC + ' ocupaciones.'), 'Ingreso bajo', 'Ingreso alto') + '</div>' + idx + '</dl>' +
-      eduMarkup(o) + afMarkup(o) + more;
+    var mitad = function(p){ return p >= 50 ? 'Más parecido que la mitad' : 'Menos parecido que la mitad'; };
+    var tiles = (hasIdx ? tile('Parecido de las <b>tareas</b> con la IA (OIT)', pInt(o.po), 'percentil', pInt(o.po), true, mitad(o.po)) +
+      tile('Parecido de las <b>habilidades</b> con la IA (AIOE)', pInt(o.pa), 'percentil', pInt(o.pa), true, mitad(o.pa)) : '') +
+      tile('Personas que la ejercen', fmtN(o.n), '', o.p_n, false, '<b>Percentil ' + o.p_n + '</b> · ' + (o.n/NAT.ocupados*100).toLocaleString('es-CO', {maximumFractionDigits:2}) + '% del empleo') +
+      tile('Ingreso mensual mediano', fmtM(o.imed), '', o.p_imed, false, '<b>Percentil ' + o.p_imed + '</b> · promedio ' + fmtM(o.im));
+    detail.setAttribute('data-k', k);
+    detail.innerHTML = '<div class="chead">' + pill + '</div><h3>' + esc(o.l) + '</h3><p class="verdict">' + VERDICT[k] + '</p>' +
+      '<div class="tiles' + (hasIdx ? '' : ' t2') + '">' + tiles + '</div>' +
+      '<p class="tiles-note">Percentil: posición entre las ocupaciones, de 0 a 100. En el parecido con la IA, 50 es el punto medio.</p>' +
+      eduMarkup(o) + afMarkup(o);
     detail.querySelectorAll('.af-row').forEach(function(row){
       var go = function(){ var t = OCC.filter(function(x){ return x.l === row.dataset.l; })[0]; if(t) choose(t); };
       row.addEventListener('click', go);
@@ -704,7 +694,7 @@
   }
   function renderMap(){
     var W = Math.max(300, qmap.clientWidth || 640), narrow = W < 560;
-    var mL = narrow ? 40 : 52, mR = 14, mT = 14, mB = 52, H = narrow ? 340 : 440;
+    var mL = narrow ? 40 : 52, mR = 14, mT = 14, mB = 50, H = narrow ? 320 : 400;
     var pw = W - mL - mR, ph = H - mT - mB;
     var oMin = -2, oMax = 102, aMin = -2, aMax = 102;
     var x = function(v){ return mL + (v - oMin)/(oMax - oMin) * pw; };
@@ -727,10 +717,16 @@
       var r = 2.8 + Math.sqrt((o.n||0)/NMAX) * 11, isP = pinned === o.l;
       s += '<circle class="pt ' + o.k + (isP ? ' pinned' : '') + '" data-l="' + esc(o.l) + '" cx="' + x(o.po).toFixed(1) + '" cy="' + y(o.pa).toFixed(1) + '" r="' + (isP ? Math.max(r, 8) : r).toFixed(1) + '"></circle>';
     });
-    s += '<text class="zone" x="' + (mL + 8) + '" y="' + (mT + 18) + '">Incierto · ' + p1(sTL) + '</text>';
-    s += '<text class="zone" x="' + (mL + pw - 8) + '" y="' + (mT + 18) + '" text-anchor="end">Alto · ' + p1(sA) + '</text>';
-    s += '<text class="zone" x="' + (mL + 8) + '" y="' + (mT + ph - 10) + '">Bajo · ' + p1(sB) + '</text>';
-    s += '<text class="zone" x="' + (mL + pw - 8) + '" y="' + (mT + ph - 10) + '" text-anchor="end">Incierto · ' + p1(sBR) + '</text>';
+    var zl = function(c, v){ return W < 700 ? SHORT[c] + ' · ' + p1(v) : [LABEL[c], p1(v)]; };
+    var zt = function(x0, y0, anchor, c, v, up){
+      var t = zl(c, v), g = '<text class="zone" x="' + x0 + '" y="' + y0 + '"' + (anchor ? ' text-anchor="end"' : '') + '>';
+      if(typeof t === 'string') return g + t + '</text>';
+      return g + '<tspan x="' + x0 + '" dy="' + (up ? 0 : -15) + '">' + t[0] + '</tspan><tspan x="' + x0 + '" dy="15">' + t[1] + '</tspan></text>';
+    };
+    s += zt(mL + 8, mT + 18, false, 'incierto', sTL, true);
+    s += zt(mL + pw - 8, mT + 18, true, 'alto', sA, true);
+    s += zt(mL + 8, mT + ph - 10, false, 'bajo', sB, false);
+    s += zt(mL + pw - 8, mT + ph - 10, true, 'incierto', sBR, false);
     var pinO = pinned && PTS.filter(function(o){ return o.l === pinned; })[0];
     if(pinO){
       var txt = pinO.l.length > (narrow ? 30 : 44) ? pinO.l.slice(0, narrow ? 29 : 43) + '…' : pinO.l;
@@ -780,7 +776,7 @@
       grid.className = 'cmp-stack';
     } else { grid.className = 'cmp'; }
     grid.innerHTML = h;
-    ins.innerHTML = '<b>' + pct(P.alto.superior) + '</b> de quienes tienen potencial alto cuentan con educación superior, y su ingreso mediano (' + fmtM(P.alto.ingresoMediano) + ') es <b>' +
+    ins.innerHTML = '<b>' + pct(P.alto.superior) + '</b> de quienes tienen potencial alto de automatización relativa cuentan con educación superior, y su ingreso mediano (' + fmtM(P.alto.ingresoMediano) + ') es <b>' +
       (P.alto.ingresoMediano/P.bajo.ingresoMediano).toLocaleString('es-CO', {maximumFractionDigits:1}) + ' veces</b> el de quienes tienen potencial bajo (' + fmtM(P.bajo.ingresoMediano) +
       '). Las mujeres son ' + pct(P.total.mujeres) + ' de los ocupados, pero ' + pct(P.alto.mujeres) + ' del grupo de potencial alto.';
   }
@@ -830,7 +826,7 @@
     });
     var chg = series.map(function(s){ return s.pts[s.pts.length-1].idx - 100; });
     var sg = function(v){ return (v >= 0 ? '+' : '') + v.toLocaleString('es-CO', {maximumFractionDigits:0}) + '%'; };
-    document.getElementById('evo-insight').innerHTML = (m === 'empleo' ? 'El empleo' : 'El ingreso real') + ' entre 2021 y 2025 cambió <b>' + sg(chg[0]) + '</b> en potencial alto, <b>' + sg(chg[1]) + '</b> en bajo y <b>' + sg(chg[2]) + '</b> en incierto.';
+    document.getElementById('evo-insight').innerHTML = (m === 'empleo' ? 'El empleo' : 'El ingreso real') + ' entre 2021 y 2025 cambió <b>' + sg(chg[0]) + '</b> en el grupo de potencial alto de automatización relativa, <b>' + sg(chg[1]) + '</b> en el de potencial bajo y <b>' + sg(chg[2]) + '</b> en el de potencial incierto.';
     document.getElementById('evo-legend').innerHTML = series.map(function(s){
       return '<span><i class="dot bg-' + s.c + '"></i>' + LABEL[s.c] + ' <b class="num">' + Math.round(s.pts[s.pts.length-1].idx) + '</b></span>';
     }).join('');
@@ -853,8 +849,8 @@
     var grp = DATA.groups[gDim];
     var items = RANKED[gDim] ? grp.items.slice().sort(function(a,b){ return (b.alto||0) - (a.alto||0); }) : grp.items;
     var top = items.reduce(function(a,b){ return b.alto > a.alto ? b : a; }), bot = items.reduce(function(a,b){ return b.alto < a.alto ? b : a; });
-    document.getElementById('g-insight').innerHTML = '<b>' + esc(top.label) + '</b> tiene la mayor parte de su empleo en potencial alto (' + fmtPct(top.alto) + '); <b>' + esc(bot.label) + '</b>, la menor (' + fmtPct(bot.alto) + ').';
-    var h = '<div class="gcol"><span>' + grp.title + '</span><span></span><span>% alto</span></div>';
+    document.getElementById('g-insight').innerHTML = '<b>' + esc(top.label) + '</b> tiene la mayor parte de su empleo en potencial alto de automatización relativa (' + fmtPct(top.alto) + '); <b>' + esc(bot.label) + '</b>, la menor (' + fmtPct(bot.alto) + ').';
+    var h = '<div class="gcol"><span>' + grp.title + '</span><span></span><span>% potencial alto</span></div>';
     items.forEach(function(it, i){
       h += '<div class="grow" data-i="' + i + '"><div class="gl">' + esc(it.label) + '</div><div class="gb" role="img" aria-label="Alto ' + fmtPct(it.alto) + ', bajo ' + fmtPct(it.bajo) + ', incierto ' + fmtPct(it.incierto) + '">' +
         CATS.map(function(c){ return '<i class="bg-' + c + '" style="width:' + (it[c]*100) + '%"></i>'; }).join('') + '</div><div class="gv num">' + fmtPct(it.alto) + '</div></div>';
@@ -867,8 +863,8 @@
       });
       r.addEventListener('mouseleave', hideTip);
     });
-    document.getElementById('g-cap').innerHTML = 'Cada barra suma 100% del empleo del grupo. En todo el país: <b>' + fmtPct(NAT.alto) + '</b> alto, <b>' + fmtPct(NAT.bajo) + '</b> bajo y <b>' + fmtPct(NAT.incierto) + '</b> incierto.';
-    document.getElementById('g-table').innerHTML = '<table class="t"><thead><tr><th>' + grp.title + '</th><th>Alto</th><th>Bajo</th><th>Incierto</th></tr></thead><tbody>' +
+    document.getElementById('g-cap').innerHTML = 'Cada barra suma 100% del empleo del grupo. En todo el país: <b>' + fmtPct(NAT.alto) + '</b> potencial alto, <b>' + fmtPct(NAT.bajo) + '</b> bajo y <b>' + fmtPct(NAT.incierto) + '</b> incierto.';
+    document.getElementById('g-table').innerHTML = '<table class="t"><thead><tr><th>' + grp.title + '</th><th>Potencial alto</th><th>Potencial bajo</th><th>Potencial incierto</th></tr></thead><tbody>' +
       items.map(function(it){ return '<tr><td>' + esc(it.label) + '</td><td>' + fmtPct(it.alto) + '</td><td>' + fmtPct(it.bajo) + '</td><td>' + fmtPct(it.incierto) + '</td></tr>'; }).join('') + '</tbody></table>';
   }
   dimChips.addEventListener('click', function(e){
@@ -882,9 +878,9 @@
   var sorted = OCC.filter(function(o){ return o.a != null; }).sort(function(a,b){ return (b.n||0) - (a.n||0); });
   var rankChips = document.getElementById('rank-chips'), rankList = document.getElementById('rank-list');
   var moreBtn = document.getElementById('rank-more'), moreWrap = document.getElementById('rank-more-wrap');
-  var rState = 'all', rLimit = 25, NRMAX = Math.max.apply(null, sorted.map(function(o){ return o.n || 0; }));
+  var rState = 'all', rLimit = 10, NRMAX = Math.max.apply(null, sorted.map(function(o){ return o.n || 0; }));
   var counts = {all: sorted.length}; sorted.forEach(function(o){ var c = o.k || 'sin'; counts[c] = (counts[c]||0) + 1; });
-  rankChips.innerHTML = [['all','Todas'],['alto','Potencial alto'],['bajo','Potencial bajo'],['incierto','Potencial incierto']].map(function(c, i){
+  rankChips.innerHTML = [['all','Todas'],['alto',LABEL.alto],['bajo',LABEL.bajo],['incierto',LABEL.incierto]].map(function(c, i){
     return '<button class="chip" type="button" data-q="' + c[0] + '" aria-pressed="' + (i === 0) + '">' + c[1] + ' (' + counts[c[0]] + ')</button>';
   }).join('');
   function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
@@ -903,15 +899,15 @@
       r.addEventListener('mousemove', function(e){ showTip(e, esc(o.l), trow('Potencial', o.k ? LABEL[o.k] : 'Sin información', o.k) + trow('Ocupados', fmtN(o.n))); });
       r.addEventListener('mouseleave', hideTip);
     });
-    if(list.length > rLimit){ moreWrap.hidden = false; moreBtn.textContent = 'Mostrar todas (' + list.length + ')'; } else { moreWrap.hidden = true; }
+    if(list.length > rLimit){ moreWrap.hidden = false; moreBtn.textContent = 'Mostrar más (' + list.length + ' en total)'; } else { moreWrap.hidden = true; }
   }
   rankChips.addEventListener('click', function(e){
     var b = e.target.closest('button[data-q]'); if(!b) return;
-    rState = b.dataset.q; rLimit = 25;
+    rState = b.dataset.q; rLimit = 10;
     Array.prototype.forEach.call(rankChips.children, function(c){ c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); });
     renderRank();
   });
-  moreBtn.addEventListener('click', function(){ rLimit = Infinity; renderRank(); });
+  moreBtn.addEventListener('click', function(){ rLimit = rLimit < 50 ? 50 : Infinity; renderRank(); });
   var rs = document.getElementById('rank-search'), rr = document.getElementById('rank-results');
   rs.addEventListener('input', function(){
     var q = norm(rs.value);
@@ -924,6 +920,17 @@
     var b = e.target.closest('button[data-l]'); if(!b) return;
     var o = OCC.filter(function(x){ return x.l === b.dataset.l; })[0]; if(o) choose(o);
     rs.value = ''; rr.innerHTML = '';
+  });
+
+  /* ---------- pestañas de "Explora" ---------- */
+  var tabChips = document.getElementById('tab-chips');
+  tabChips.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-tab]'); if(!b) return;
+    Array.prototype.forEach.call(tabChips.children, function(c){
+      var on = c === b; c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      document.getElementById('tab-' + c.dataset.tab).hidden = !on;
+    });
+    renderEvo(); renderGroups(); renderPerfil();
   });
 
   /* ---------- arranque ---------- */
