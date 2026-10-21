@@ -135,6 +135,7 @@
   .tile .tc{font-size:12.5px;color:var(--ink-2);line-height:1.35;}
   .tile .tc b{color:var(--ink);}
   .tiles-note{margin-top:8px;font-size:12.5px;color:var(--muted);}
+  .vnote{margin-top:6px;max-width:70ch;font-size:13px;color:var(--muted);}
   @media (max-width:760px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr));}.tile .tl{min-height:0;}}
   .edu{margin-top:14px;}
   .edu h4{margin:0;font-size:12.5px;font-weight:600;color:var(--muted);}
@@ -294,14 +295,14 @@
   <div class="wrap">
     <div class="eyebrow">Inteligencia artificial y empleo en Colombia · GEIH 2025</div>
     <h1>Potencialidad de automatización en el mercado laboral colombiano</h1>
-    <p class="sub">Un indicador que dice si una ocupación tiene un potencial de automatización relativa <b>alto</b>, <b>bajo</b> o <b>incierto</b> frente a la inteligencia artificial. Mide qué tan parecido es un trabajo a lo que la IA ya hace hoy; no predice pérdida de empleos.</p>
+    <p class="sub">Dice si una ocupación tiene un potencial de automatización relativa de tareas <b>alto</b>, <b>bajo</b> o <b>incierto</b>. Combina dos índices: el AIOE evalúa en qué medida la IA tiene las habilidades que requiere la ocupación, y el OIT-NASK, en qué medida puede realizar sus tareas. Si los dos no coinciden, el resultado es incierto. Automatizar tareas no equivale a eliminar empleos.</p>
 
     <div class="split" aria-label="Distribución del empleo colombiano según el potencial de automatización">
       <div class="bar" id="hero-bar" role="img"></div>
       <div class="cols">
-        <div class="col"><div class="k"><span class="dot bg-alto"></span>Potencial alto de automatización relativa</div><div class="big num" data-share="alto"></div><div class="ppl" data-people="alto"></div><p class="def">Más parecido que la mayoría a lo que hoy hace la IA.</p></div>
-        <div class="col"><div class="k"><span class="dot bg-bajo"></span>Potencial bajo de automatización relativa</div><div class="big num" data-share="bajo"></div><div class="ppl" data-people="bajo"></div><p class="def">Menos parecido que la mayoría a lo que hoy hace la IA.</p></div>
-        <div class="col"><div class="k"><span class="dot bg-incierto"></span>Potencial incierto de automatización relativa</div><div class="big num" data-share="incierto"></div><div class="ppl" data-people="incierto"></div><p class="def">Las señales apuntan en direcciones distintas.</p></div>
+        <div class="col"><div class="k"><span class="dot bg-alto"></span>Potencial alto de automatización relativa</div><div class="big num" data-share="alto"></div><div class="ppl" data-people="alto"></div><p class="def">Los dos índices la ubican en la mitad superior de las ocupaciones.</p></div>
+        <div class="col"><div class="k"><span class="dot bg-bajo"></span>Potencial bajo de automatización relativa</div><div class="big num" data-share="bajo"></div><div class="ppl" data-people="bajo"></div><p class="def">Los dos índices la ubican en la mitad inferior de las ocupaciones.</p></div>
+        <div class="col"><div class="k"><span class="dot bg-incierto"></span>Potencial incierto de automatización relativa</div><div class="big num" data-share="incierto"></div><div class="ppl" data-people="incierto"></div><p class="def">Los índices no coinciden: uno la ubica arriba y el otro abajo.</p></div>
       </div>
     </div>
   </div>
@@ -346,7 +347,7 @@
     </div>
     <div class="chips" id="tab-chips" role="group" aria-label="Elige qué ver">
       <button class="chip" type="button" data-tab="perfil" aria-pressed="true">¿Quiénes tienen cada potencial?</button>
-      <button class="chip" type="button" data-tab="evo" aria-pressed="false">¿Ya se nota? 2021–2025</button>
+      <button class="chip" type="button" data-tab="evo" aria-pressed="false">Empleo e ingresos entre 2021 y 2025</button>
       <button class="chip" type="button" data-tab="grupo" aria-pressed="false">Por grupo de población</button>
     </div>
 
@@ -405,8 +406,8 @@
         <h4>Cómo se calcula</h4>
         <details>
           <summary>Ver la metodología</summary>
-          <p>Combinamos dos índices internacionales con los ocupados de la Gran Encuesta Integrada de Hogares (GEIH) 2025 del DANE, usando la clasificación CIUO-08 a 4 dígitos. El <b>parecido de las tareas</b> es el índice OIT-NASK (Gmyrek et&nbsp;al., 2025); el <b>parecido de las habilidades</b> es el índice AIOE (Felten, Raj y Seamans, 2021).</p>
-          <p>Cada índice se expresa en una escala de 0 a 100: la posición (percentil) de la ocupación entre las 418 ocupaciones con puntaje en ambos, donde cada ocupación pesa lo mismo. El corte es el 50, que equivale a la mediana (<span data-med="oit"></span> en el índice de tareas y <span data-med="aioe"></span> en el de habilidades). El potencial de automatización relativa es alto si los dos índices ubican la ocupación en 50 o por encima, bajo si los dos la ubican por debajo, e incierto si solo uno la ubica arriba. Las ocupaciones que empatan con la mediana cuentan como altas. "Alto" es una posición relativa: significa más parecido a la IA que la ocupación típica. Las participaciones del empleo usan los factores de expansión de la GEIH. Los cruces por año usan la GEIH 2021–2025 con ingresos en pesos de 2025.</p>
+          <p>Combinamos dos índices internacionales con los ocupados de la Gran Encuesta Integrada de Hogares (GEIH) 2025 del DANE, usando la clasificación CIUO-08 a 4 dígitos. El índice <b>OIT-NASK</b> (Gmyrek et&nbsp;al., 2025) evalúa en qué medida la IA puede realizar las <b>tareas</b> de la ocupación; el índice <b>AIOE</b> (Felten, Raj y Seamans, 2021) evalúa en qué medida la IA tiene las <b>habilidades</b> que la ocupación requiere.</p>
+          <p>Cada índice se expresa en una escala de 0 a 100: la posición (percentil) de la ocupación entre las 418 ocupaciones con puntaje en ambos, donde cada ocupación pesa lo mismo. El corte es el 50, que equivale a la mediana (<span data-med="oit"></span> en el índice de tareas y <span data-med="aioe"></span> en el de habilidades). El potencial de automatización relativa de tareas es alto si los dos índices ubican la ocupación en 50 o por encima, bajo si los dos la ubican por debajo, e incierto si los índices no coinciden (uno la ubica arriba y el otro abajo). Las ocupaciones que empatan con la mediana cuentan como altas. "Alto" es una posición relativa: significa un mayor potencial de automatización de tareas que la ocupación típica, no una predicción de pérdida de empleo. Automatizar tareas no equivale a eliminar empleos: también puede abrir oportunidades de mayor productividad y mejores salarios. Las participaciones del empleo usan los factores de expansión de la GEIH. Los cruces por año usan la GEIH 2021–2025 con ingresos en pesos de 2025.</p>
           <p class="cite">Felten, E., Raj, M., y Seamans, R. (2021). Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses. <i>Strategic Management Journal</i>.<br>Gmyrek, P. et&nbsp;al. (2025). Generative AI and jobs: A global analysis of potential effects on job quantity and quality. OIT y NASK.</p>
         </details>
       </div>
@@ -623,9 +624,9 @@
   }
   var EDU_COL = ['--edu-1','--edu-2','--edu-3','--edu-4','--edu-5'];
   var VERDICT = {
-    alto: 'Se parece más que la mayoría de ocupaciones a lo que hoy puede hacer la IA.',
-    bajo: 'Se parece menos que la mayoría de ocupaciones a lo que hoy puede hacer la IA.',
-    incierto: 'Las señales apuntan en direcciones distintas, así que no podemos decir si es alto o bajo. No significa riesgo medio.',
+    alto: '<b>Potencial alto de automatización relativa de tareas.</b> Los dos índices coinciden: la IA puede realizar más de sus tareas y tiene más de las habilidades que exige que en la mayoría de ocupaciones.',
+    bajo: '<b>Potencial bajo de automatización relativa de tareas.</b> Los dos índices coinciden: la IA puede realizar menos de sus tareas y tiene menos de las habilidades que exige que en la mayoría de ocupaciones.',
+    incierto: '<b>Potencial incierto de automatización relativa de tareas.</b> Los índices no coinciden: uno la ubica en la mitad superior y el otro en la inferior, así que no podemos decir si es alto o bajo.',
     sin: 'No pudimos clasificar esta ocupación: le falta información.'
   };
   var pinned = null;
@@ -661,15 +662,15 @@
     var pill = k === 'sin' ? '<span class="pill">Sin información suficiente</span>' :
       '<span class="pill ' + k + '"><i class="dot bg-' + k + '"></i>' + LABEL[k] + '</span>';
     var hasIdx = o.o != null && o.a != null;
-    var mitad = function(p){ return p >= 50 ? 'Más parecido que la mitad' : 'Menos parecido que la mitad'; };
-    var tiles = (hasIdx ? tile('Parecido de las <b>tareas</b> con la IA (OIT)', pInt(o.po), 'percentil', pInt(o.po), true, mitad(o.po)) +
-      tile('Parecido de las <b>habilidades</b> con la IA (AIOE)', pInt(o.pa), 'percentil', pInt(o.pa), true, mitad(o.pa)) : '') +
+    var mitad = function(p){ return p >= 50 ? 'En la mitad superior de las ocupaciones' : 'En la mitad inferior de las ocupaciones'; };
+    var tiles = (hasIdx ? tile('<b>Tareas</b> que la IA puede realizar (OIT-NASK)', pInt(o.po), 'percentil', pInt(o.po), true, mitad(o.po)) +
+      tile('<b>Habilidades</b> que la IA tiene (AIOE)', pInt(o.pa), 'percentil', pInt(o.pa), true, mitad(o.pa)) : '') +
       tile('Personas que la ejercen', fmtN(o.n), '', o.p_n, false, '<b>Percentil ' + o.p_n + '</b> · ' + (o.n/NAT.ocupados*100).toLocaleString('es-CO', {maximumFractionDigits:2}) + '% del empleo') +
       tile('Ingreso mensual mediano', fmtM(o.imed), '', o.p_imed, false, '<b>Percentil ' + o.p_imed + '</b> · promedio ' + fmtM(o.im));
     detail.setAttribute('data-k', k);
-    detail.innerHTML = '<div class="chead">' + pill + '</div><h3>' + esc(o.l) + '</h3><p class="verdict">' + VERDICT[k] + '</p>' +
+    detail.innerHTML = '<div class="chead">' + pill + '</div><h3>' + esc(o.l) + '</h3><p class="verdict">' + VERDICT[k] + '</p>' + (k === 'sin' ? '' : '<p class="vnote">Automatizar tareas no equivale a eliminar empleos: también puede abrir oportunidades de mayor productividad y mejores salarios.</p>') +
       '<div class="tiles' + (hasIdx ? '' : ' t2') + '">' + tiles + '</div>' +
-      '<p class="tiles-note">Percentil: posición entre las ocupaciones, de 0 a 100. En el parecido con la IA, 50 es el punto medio.</p>' +
+      '<p class="tiles-note">Percentil: posición entre las ocupaciones, de 0 a 100. En los dos índices, 50 es el punto medio.</p>' +
       eduMarkup(o) + afMarkup(o);
     detail.querySelectorAll('.af-row').forEach(function(row){
       var go = function(){ var t = OCC.filter(function(x){ return x.l === row.dataset.l; })[0]; if(t) choose(t); };
@@ -733,9 +734,9 @@
       var half = txt.length * 3.5 + 4, px = Math.min(Math.max(x(pinO.po), mL + half), mL + pw - half);
       s += '<text class="pinlabel" x="' + px + '" y="' + Math.max(mT + 30, y(pinO.pa) - 14) + '" text-anchor="middle">' + esc(txt) + '</text>';
     }
-    s += '<text class="axt" x="' + (mL + pw/2) + '" y="' + (H - 6) + '" text-anchor="middle">Parecido de las tareas con la IA (0 a 100) →</text>';
-    s += '<text class="axt" transform="translate(13 ' + (mT + ph/2) + ') rotate(-90)" text-anchor="middle">Parecido de las habilidades con la IA (0 a 100) →</text>';
-    qmap.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Mapa de ocupaciones según el parecido de sus tareas y habilidades con la IA">' + s + '</svg>';
+    s += '<text class="axt" x="' + (mL + pw/2) + '" y="' + (H - 6) + '" text-anchor="middle">Tareas que la IA puede hacer (OIT-NASK) →</text>';
+    s += '<text class="axt" transform="translate(13 ' + (mT + ph/2) + ') rotate(-90)" text-anchor="middle">Habilidades que la IA tiene (AIOE) →</text>';
+    qmap.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Mapa de ocupaciones según las tareas que la IA puede realizar y las habilidades que tiene">' + s + '</svg>';
     qmap.querySelectorAll('.pt').forEach(function(c){
       var o = PTS.filter(function(p){ return p.l === c.dataset.l; })[0];
       c.addEventListener('mousemove', function(e){ showTip(e, esc(o.l), trow('Potencial', LABEL[o.k], o.k) + trow('Tareas', pInt(o.po)) + trow('Habilidades', pInt(o.pa)) + trow('Ocupados', fmtN(o.n))); });
@@ -826,7 +827,7 @@
     });
     var chg = series.map(function(s){ return s.pts[s.pts.length-1].idx - 100; });
     var sg = function(v){ return (v >= 0 ? '+' : '') + v.toLocaleString('es-CO', {maximumFractionDigits:0}) + '%'; };
-    document.getElementById('evo-insight').innerHTML = (m === 'empleo' ? 'El empleo' : 'El ingreso real') + ' entre 2021 y 2025 cambió <b>' + sg(chg[0]) + '</b> en el grupo de potencial alto de automatización relativa, <b>' + sg(chg[1]) + '</b> en el de potencial bajo y <b>' + sg(chg[2]) + '</b> en el de potencial incierto.';
+    document.getElementById('evo-insight').innerHTML = (m === 'empleo' ? 'El empleo' : 'El ingreso real') + ' entre 2021 y 2025 cambió <b>' + sg(chg[0]) + '</b> en el grupo de potencial alto de automatización relativa, <b>' + sg(chg[1]) + '</b> en el de potencial bajo y <b>' + sg(chg[2]) + '</b> en el de potencial incierto. Son cambios observados, no efectos de la IA.';
     document.getElementById('evo-legend').innerHTML = series.map(function(s){
       return '<span><i class="dot bg-' + s.c + '"></i>' + LABEL[s.c] + ' <b class="num">' + Math.round(s.pts[s.pts.length-1].idx) + '</b></span>';
     }).join('');
@@ -849,7 +850,15 @@
     var grp = DATA.groups[gDim];
     var items = RANKED[gDim] ? grp.items.slice().sort(function(a,b){ return (b.alto||0) - (a.alto||0); }) : grp.items;
     var top = items.reduce(function(a,b){ return b.alto > a.alto ? b : a; }), bot = items.reduce(function(a,b){ return b.alto < a.alto ? b : a; });
-    document.getElementById('g-insight').innerHTML = '<b>' + esc(top.label) + '</b> tiene la mayor parte de su empleo en potencial alto de automatización relativa (' + fmtPct(top.alto) + '); <b>' + esc(bot.label) + '</b>, la menor (' + fmtPct(bot.alto) + ').';
+    var p0 = function(v){ return Math.round(v*100) + '%'; };
+    var byLab = function(l){ return items.filter(function(i){ return i.label === l; })[0]; };
+    var ins = '<b>' + esc(top.label) + '</b> tiene la mayor proporción de su empleo en ocupaciones con potencial alto de automatización relativa (' + p0(top.alto) + '); <b>' + esc(bot.label) + '</b>, la menor (' + p0(bot.alto) + ').';
+    if(gDim === 'sexo' && byLab('Mujer') && byLab('Hombre')){
+      ins = 'El <b>' + p0(byLab('Mujer').alto) + '</b> de las mujeres trabaja en ocupaciones con potencial alto de automatización relativa, frente al <b>' + p0(byLab('Hombre').alto) + '</b> de los hombres.';
+    } else if(gDim === 'formalidad' && byLab('Formal') && byLab('Informal')){
+      ins = 'El <b>' + p0(byLab('Formal').alto) + '</b> de los ocupados formales trabaja en ocupaciones con potencial alto de automatización relativa, frente al <b>' + p0(byLab('Informal').alto) + '</b> de los informales.';
+    }
+    document.getElementById('g-insight').innerHTML = ins;
     var h = '<div class="gcol"><span>' + grp.title + '</span><span></span><span>% potencial alto</span></div>';
     items.forEach(function(it, i){
       h += '<div class="grow" data-i="' + i + '"><div class="gl">' + esc(it.label) + '</div><div class="gb" role="img" aria-label="Alto ' + fmtPct(it.alto) + ', bajo ' + fmtPct(it.bajo) + ', incierto ' + fmtPct(it.incierto) + '">' +
