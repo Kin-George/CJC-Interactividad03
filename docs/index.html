@@ -80,6 +80,7 @@
   .hero h1{font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.05;font-weight:800;letter-spacing:-.025em;max-width:24ch;margin-top:10px;}
   .hero .sub{margin-top:12px;max-width:68ch;font-size:clamp(1rem,1.6vw,1.1rem);color:var(--ink-2);}
   .hero .sub b{color:var(--ink);font-weight:600;}
+  .hero .sub a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
   .split{margin-top:clamp(16px,2.6vw,26px);}
   .split .bar{display:flex;gap:2px;height:30px;border-radius:8px;overflow:hidden;}
   .split .bar i{display:block;min-width:2px;}
@@ -295,7 +296,7 @@
   <div class="wrap">
     <div class="eyebrow">Inteligencia artificial y empleo en Colombia · GEIH 2025</div>
     <h1>Potencialidad de automatización en el mercado laboral colombiano</h1>
-    <p class="sub">Dice si una ocupación tiene un potencial de automatización relativa de tareas <b>alto</b>, <b>bajo</b> o <b>incierto</b>. Combina dos índices: el AIOE evalúa en qué medida la IA tiene las habilidades que requiere la ocupación, y el OIT-NASK, en qué medida puede realizar sus tareas. Si los dos no coinciden, el resultado es incierto. Automatizar tareas no equivale a eliminar empleos.</p>
+    <p class="sub">Medimos el potencial relativo de automatización de las ocupaciones colombianas. Este potencial relativo lo clasificamos en <b>alto</b>, <b>bajo</b> o <b>incierto</b> potencial de automatización. Para más información consulte el informe: <a href="#" class="lnk">Placeholder link del informe</a>.</p>
 
     <div class="split" aria-label="Distribución del empleo colombiano según el potencial de automatización">
       <div class="bar" id="hero-bar" role="img"></div>
@@ -343,17 +344,11 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">Explora los datos</div>
-      <h2>Quiénes son, cómo cambian y dónde están</h2>
+      <h2>Dónde están y cómo cambian</h2>
     </div>
     <div class="chips" id="tab-chips" role="group" aria-label="Elige qué ver">
-      <button class="chip" type="button" data-tab="perfil" aria-pressed="true">¿Quiénes tienen cada potencial?</button>
+      <button class="chip" type="button" data-tab="grupo" aria-pressed="true">Por grupo de población</button>
       <button class="chip" type="button" data-tab="evo" aria-pressed="false">Empleo e ingresos entre 2021 y 2025</button>
-      <button class="chip" type="button" data-tab="grupo" aria-pressed="false">Por grupo de población</button>
-    </div>
-
-    <div id="tab-perfil">
-      <p class="insight" id="perfil-insight"></p>
-      <div class="scroll-x"><div class="cmp" id="perfil-grid"></div></div>
     </div>
 
     <div id="tab-evo" hidden>
@@ -368,7 +363,7 @@
       <details class="more"><summary>Ver datos en tabla</summary><div class="scroll-x" id="evo-table"></div></details>
     </div>
 
-    <div id="tab-grupo" hidden>
+    <div id="tab-grupo">
       <div class="chips" id="dim-chips" role="group" aria-label="Dividir por"></div>
       <p class="insight" id="g-insight"></p>
       <div class="legend">
@@ -745,43 +740,6 @@
     });
   }
 
-  /* ---------- quiénes ---------- */
-  function renderPerfil(){
-    var P = DATA.perfil, grid = document.getElementById('perfil-grid'), ins = document.getElementById('perfil-insight');
-    var pct = function(v){ return (v*100).toLocaleString('es-CO', {maximumFractionDigits:0}) + '%'; };
-    var mx = function(k){ return Math.max.apply(null, CATS.map(function(c){ return P[c][k]; })); };
-    var rows = [
-      ['mujeres','Mujeres', pct, 1], ['superior','Con educación superior', pct, 1], ['formales','Con empleo formal', pct, 1],
-      ['ingresoMediano','Ingreso mensual mediano', fmtM, 0], ['edad','Edad promedio', function(v){ return Math.round(v) + ' años'; }, 0]
-    ];
-    var h = '<div class="h"></div>' + CATS.map(function(c){
-      return '<div class="h"><div class="k"><i class="dot bg-' + c + '"></i>' + LABEL[c] + '</div><div class="p num">' + fmtMill(P[c].personas) + ' millones</div><div class="s">de personas ocupadas</div></div>';
-    }).join('');
-    rows.forEach(function(r){
-      h += '<div class="m">' + r[1] + '</div>';
-      CATS.forEach(function(c){
-        var w = r[3] ? P[c][r[0]]*100 : P[c][r[0]]/mx(r[0])*100;
-        h += '<div><div class="v num">' + r[2](P[c][r[0]]) + '</div>' + (r[0] === 'edad' ? '' : '<div class="mini"><i class="bg-' + c + '" style="width:' + Math.max(2, w) + '%"></i></div>') + '</div>';
-      });
-    });
-    if(grid.parentElement.clientWidth && grid.parentElement.clientWidth < 640){
-      h = '';
-      CATS.forEach(function(c){
-        h += '<div class="pcard"><div class="k"><i class="dot bg-' + c + '"></i>' + LABEL[c] + '</div><div class="p num">' + fmtMill(P[c].personas) + ' millones <span>de personas ocupadas</span></div>';
-        rows.forEach(function(r){
-          var w = r[3] ? P[c][r[0]]*100 : P[c][r[0]]/mx(r[0])*100;
-          h += '<div class="prow"><div class="lab"><span>' + r[1] + '</span><b class="num">' + r[2](P[c][r[0]]) + '</b></div>' + (r[0] === 'edad' ? '' : '<div class="mini"><i class="bg-' + c + '" style="width:' + Math.max(2, w) + '%"></i></div>') + '</div>';
-        });
-        h += '</div>';
-      });
-      grid.className = 'cmp-stack';
-    } else { grid.className = 'cmp'; }
-    grid.innerHTML = h;
-    ins.innerHTML = '<b>' + pct(P.alto.superior) + '</b> de quienes tienen potencial alto de automatización relativa cuentan con educación superior, y su ingreso mediano (' + fmtM(P.alto.ingresoMediano) + ') es <b>' +
-      (P.alto.ingresoMediano/P.bajo.ingresoMediano).toLocaleString('es-CO', {maximumFractionDigits:1}) + ' veces</b> el de quienes tienen potencial bajo (' + fmtM(P.bajo.ingresoMediano) +
-      '). Las mujeres son ' + pct(P.total.mujeres) + ' de los ocupados, pero ' + pct(P.alto.mujeres) + ' del grupo de potencial alto.';
-  }
-
   /* ---------- evolución ---------- */
   var evoMetric = 'empleo';
   function renderEvo(){
@@ -889,8 +847,8 @@
   var moreBtn = document.getElementById('rank-more'), moreWrap = document.getElementById('rank-more-wrap');
   var rState = 'all', rLimit = 10, NRMAX = Math.max.apply(null, sorted.map(function(o){ return o.n || 0; }));
   var counts = {all: sorted.length}; sorted.forEach(function(o){ var c = o.k || 'sin'; counts[c] = (counts[c]||0) + 1; });
-  rankChips.innerHTML = [['all','Todas'],['alto',LABEL.alto],['bajo',LABEL.bajo],['incierto',LABEL.incierto]].map(function(c, i){
-    return '<button class="chip" type="button" data-q="' + c[0] + '" aria-pressed="' + (i === 0) + '">' + c[1] + ' (' + counts[c[0]] + ')</button>';
+  rankChips.innerHTML = [['alto',LABEL.alto],['bajo',LABEL.bajo],['incierto',LABEL.incierto]].map(function(c){
+    return '<button class="chip" type="button" data-q="' + c[0] + '" aria-pressed="false">' + c[1] + ' (' + counts[c[0]] + ')</button>';
   }).join('');
   function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
   function renderRank(){
@@ -912,8 +870,8 @@
   }
   rankChips.addEventListener('click', function(e){
     var b = e.target.closest('button[data-q]'); if(!b) return;
-    rState = b.dataset.q; rLimit = 10;
-    Array.prototype.forEach.call(rankChips.children, function(c){ c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); });
+    rState = (rState === b.dataset.q) ? 'all' : b.dataset.q; rLimit = 10;     // volver a tocar el filtro activo lo quita
+    Array.prototype.forEach.call(rankChips.children, function(c){ c.setAttribute('aria-pressed', c.dataset.q === rState ? 'true' : 'false'); });
     renderRank();
   });
   moreBtn.addEventListener('click', function(){ rLimit = rLimit < 50 ? 50 : Infinity; renderRank(); });
@@ -939,12 +897,12 @@
       var on = c === b; c.setAttribute('aria-pressed', on ? 'true' : 'false');
       document.getElementById('tab-' + c.dataset.tab).hidden = !on;
     });
-    renderEvo(); renderGroups(); renderPerfil();
+    renderEvo(); renderGroups();
   });
 
   /* ---------- arranque ---------- */
-  function renderAll(){ renderMap(); renderEvo(); renderGroups(); renderPerfil(); }
-  renderPerfil(); renderGroups(); renderRank();
+  function renderAll(){ renderMap(); renderEvo(); renderGroups(); }
+  renderGroups(); renderRank();
   var start = OCC.filter(function(o){ return o.l.indexOf('Vendedores y auxiliares de venta en tiendas') === 0; })[0] || alpha[0];
   current = start; input.value = start.l; renderDetail(start); renderEvo();
   var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(renderAll, 180); });
